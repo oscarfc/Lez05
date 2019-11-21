@@ -36,19 +36,18 @@ public class GestioneEventi {
                 new GestioneEventi().creaUtente();
             }
         } while (risposta.substring(0, 1).toUpperCase().compareTo("X") != 0);
-        
-        for (ArrayList<Utente> utenti : col) {
-             String msg = col.next().getCognome() + " " + col.next().getNome()/* + " " + i.next().getEmail() + " " + i.next().getIndirizzo() + " "*/;            
-            JOptionPane.showMessageDialog(null, msg);            
-        }
 
+        for (Utente ut : utenti) {
+            String msg = ut.getCognome() + " " + ut.getNome() + " " + ut.getEmail() + " " + ut.getIndirizzo() + " ";
+            JOptionPane.showMessageDialog(null, msg);
+        }
     }
 
     private void creaEvento() {
-    String descrEvento = JOptionPane.showInputDialog(null, "Descrizione evento:");
-    String luogoEvento = JOptionPane.showInputDialog(null, "Luogo evento:");
-    LocalDateTime dataEvento = LocalDateTime.now();
-    eventi.add(new Evento(descrEvento, luogoEvento, dataEvento));
+        String descrEvento = JOptionPane.showInputDialog(null, "Descrizione evento:");
+        String luogoEvento = JOptionPane.showInputDialog(null, "Luogo evento:");
+        LocalDateTime dataEvento = LocalDateTime.now();
+        eventi.add(new Evento(descrEvento, luogoEvento, dataEvento));
     }
 
     private void creaBiglietto() {
